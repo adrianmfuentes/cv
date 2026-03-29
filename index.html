@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adrián Martínez Fuentes — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Language toggle -->
+  <div class="lang-toggle">
+    <button id="btn-es" class="lang-btn active" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">/</span>
+    <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+
+  <main class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-text">
+        <h1 class="name">Adrián Martínez Fuentes</h1>
+        <p class="title" data-es="Estudiante de Ingeniería del Software" data-en="Software Engineering Student">Estudiante de Ingeniería del Software</p>
+        <div class="contact-links">
+          <a href="mailto:amf13azul@gmail.com">amf13azul@gmail.com</a>
+          <span class="dot">·</span>
+          <a href="https://linkedin.com/in/adrianmfuentese" target="_blank">LinkedIn</a>
+          <span class="dot">·</span>
+          <a href="https://github.com/adrianmfuentes" target="_blank">GitHub</a>
+          <span class="dot">·</span>
+          <span data-es="Oviedo, España" data-en="Oviedo, Spain">Oviedo, España</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experiencia</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <h3 class="entry-title" data-es="Becario — Ingeniero de Software" data-en="Intern — Software Engineer">Becario — Ingeniero de Software</h3>
+            <span class="entry-org">Indra ATM Systems</span>
+            <span class="entry-location" data-es="· Gijón, España" data-en="· Gijón, Spain">· Gijón, España</span>
+          </div>
+          <span class="entry-period badge-current" data-es="2026 — Presente" data-en="2026 — Present">2026 — Presente</span>
+        </div>
+        <p class="entry-dept">iTEC &amp; Internal Solutions</p>
+        <ul class="entry-list">
+          <li data-es="Apoyo en gestión de proyectos con metodologías ágiles" data-en="Project management support using agile methodologies">Apoyo en gestión de proyectos con metodologías ágiles</li>
+          <li data-es="Seguimiento de hitos y control con Jira" data-en="Milestone tracking and control with Jira">Seguimiento de hitos y control con Jira</li>
+          <li data-es="Comunicación interdepartamental y gestión de stakeholders" data-en="Interdepartmental communication and stakeholder management">Comunicación interdepartamental y gestión de stakeholders</li>
+          <li data-es="Redacción de documentación técnica y de procesos" data-en="Technical and process documentation writing">Redacción de documentación técnica y de procesos</li>
+          <li data-es="Optimización de flujos de trabajo mediante métricas de rendimiento" data-en="Workflow optimization using performance metrics">Optimización de flujos de trabajo mediante métricas de rendimiento</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title" data-es="Educación" data-en="Education">Educación</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <h3 class="entry-title" data-es="Grado en Ingeniería del Software (Programa Bilingüe)" data-en="Bachelor's in Software Engineering (Bilingual Program)">Grado en Ingeniería del Software (Programa Bilingüe)</h3>
+            <span class="entry-org" data-es="Universidad de Oviedo" data-en="University of Oviedo">Universidad de Oviedo</span>
+          </div>
+          <span class="entry-period badge-current" data-es="2022 — Presente" data-en="2022 — Present">2022 — Presente</span>
+        </div>
+        <ul class="entry-list">
+          <li data-es="Media: 7,303 / 10 · Matrícula de Honor en Arquitectura del Software" data-en="GPA: 7.303 / 10 · Honours in Software Architecture">Media: 7,303 / 10 · Matrícula de Honor en Arquitectura del Software</li>
+          <li data-es="Fundamentos de ciencias de la computación: programación, algoritmos, SSOO, redes y BBDD" data-en="Computer science fundamentals: programming, algorithms, OS, networks and databases">Fundamentos de ciencias de la computación: programación, algoritmos, SSOO, redes y BBDD</li>
+          <li data-es="Inmersión en desarrollo web, arquitectura de software y ciberseguridad" data-en="Deep dive into web development, software architecture and cybersecurity">Inmersión en desarrollo web, arquitectura de software y ciberseguridad</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <span class="skill-label" data-es="Lenguajes" data-en="Languages">Lenguajes</span>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript / TypeScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Bash</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label">Frameworks</span>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Spring</span>
+            <span class="tag">Next.js</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label">Cloud &amp; DevOps</span>
+          <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Azure</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label" data-es="Bases de Datos" data-en="Databases">Bases de Datos</span>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label" data-es="Intereses" data-en="Interests">Intereses</span>
+          <div class="tags">
+            <span class="tag" data-es="Sistemas Inteligentes" data-en="Intelligent Systems">Sistemas Inteligentes</span>
+            <span class="tag" data-es="Ciberseguridad" data-en="Cybersecurity">Ciberseguridad</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Certifications -->
+    <section class="section">
+      <h2 class="section-title" data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
+
+      <div class="certs-grid">
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-name" data-es="Esquema Nacional de Seguridad" data-en="National Security Framework">Esquema Nacional de Seguridad</span>
+            <span class="cert-year">2025</span>
+          </div>
+          <span class="cert-org" data-es="Centro Criptológico Nacional" data-en="National Cryptologic Center">Centro Criptológico Nacional</span>
+          <p class="cert-desc" data-es="Certificación en gestión de seguridad de la información y buenas prácticas" data-en="Certification in information security management and best practices">Certificación en gestión de seguridad de la información y buenas prácticas</p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-name">Cambridge English B2</span>
+            <span class="cert-year">2021</span>
+          </div>
+          <span class="cert-org">Cambridge</span>
+          <p class="cert-desc" data-es="Competencia en inglés de nivel intermedio-alto" data-en="Upper-intermediate proficiency in English">Competencia en inglés de nivel intermedio-alto</p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-name" data-es="Desarrollo Web" data-en="Web Development">Desarrollo Web</span>
+            <span class="cert-year">2024</span>
+          </div>
+          <span class="cert-org">Universidad de Oviedo — TalentUO</span>
+          <p class="cert-desc" data-es="HTML, CSS, JavaScript, React, Node.js, MariaDB" data-en="HTML, CSS, JavaScript, React, Node.js, MariaDB">HTML, CSS, JavaScript, React, Node.js, MariaDB</p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-header">
+            <span class="cert-name" data-es="IA &amp; Productividad" data-en="AI &amp; Productivity">IA &amp; Productividad</span>
+            <span class="cert-year">2024</span>
+          </div>
+          <span class="cert-org">Google</span>
+          <p class="cert-desc" data-es="Inteligencia artificial aplicada a la productividad personal y profesional" data-en="Artificial intelligence applied to personal and professional productivity">Inteligencia artificial aplicada a la productividad personal y profesional</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+</body>
+</html>
