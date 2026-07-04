@@ -2,7 +2,6 @@
 
 Currículum web personal, estático y bilingüe (ES/EN), sin dependencias ni build step.
 
-**🔗 Demo:** [amfuentes-dev.vercel.app](https://amfuentes-dev.vercel.app)
 
 ## Características
 
