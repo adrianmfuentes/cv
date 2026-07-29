@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Personal logo — reuse on amf.amfserver.duckdns.org and anywhere else -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16223b"/>
+      <stop offset="100%" stop-color="#0a0e1a"/>
+    </linearGradient>
+    <linearGradient id="mono" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4d8eef"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect x="1.25" y="1.25" width="61.5" height="61.5" rx="13.75" fill="none" stroke="#26375c" stroke-width="1.5"/>
+
+  <text x="32" y="42" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="28"
+        text-anchor="middle" letter-spacing="-1" fill="url(#mono)">am</text>
+  <circle cx="49" cy="15" r="3.6" fill="#34d399"/>
+</svg>
