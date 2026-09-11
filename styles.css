@@ -340,8 +340,6 @@ body::after {
 .dot { color: var(--border); }
 
 /* ─── Sections ───────────────────────────────────────────── */
-.section { }
-
 .section-title {
   font-family: var(--font-head);
   font-size: 0.7rem;
