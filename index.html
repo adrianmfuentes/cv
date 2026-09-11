@@ -14,6 +14,11 @@
 </head>
 <body>
 
+  <!-- Ambient background blobs -->
+  <div class="aurora aurora-1" aria-hidden="true"></div>
+  <div class="aurora aurora-2" aria-hidden="true"></div>
+  <div class="aurora aurora-3" aria-hidden="true"></div>
+
   <!-- Language toggle -->
   <div class="lang-toggle">
     <button id="btn-es" class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -24,7 +29,7 @@
   <main class="container">
 
     <!-- Header -->
-    <header class="header">
+    <header class="header reveal">
       <div class="header-text">
         <h1 class="name">Adrián Martínez Fuentes</h1>
         <p class="title" data-es="Ingeniero de Software" data-en="Software Engineer">Ingeniero de Software</p>
@@ -47,7 +52,7 @@
     <div class="divider"></div>
 
     <!-- About -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
       <p class="about-text"
         data-es="Ingeniero de Software especializado en soluciones seguras, graduado con un Trabajo de Fin de Grado calificado con 10/10. Proactivo y orientado a la resolución de problemas, con experiencia técnica en entornos Python y Docker, enfocado en aportar eficiencia y calidad técnica en equipos de desarrollo innovadores."
@@ -59,7 +64,7 @@
     <div class="divider"></div>
 
     <!-- Skills -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Habilidades" data-en="Skills">Habilidades</h2>
 
       <div class="skills-grid">
@@ -106,7 +111,7 @@
     <div class="divider"></div>
 
     <!-- Experience -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experiencia</h2>
 
       <div class="entry">
@@ -129,7 +134,7 @@
     <div class="divider"></div>
 
     <!-- Education -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Formación" data-en="Education">Formación</h2>
 
       <div class="entry">
@@ -170,7 +175,7 @@
     <div class="divider"></div>
 
     <!-- Honors -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Honores y Premios" data-en="Honors &amp; Awards">Honores y Premios</h2>
 
       <div class="entry">
@@ -204,7 +209,7 @@
     <div class="divider"></div>
 
     <!-- Projects -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
 
       <div class="projects-grid">
@@ -260,7 +265,7 @@
     <div class="divider"></div>
 
     <!-- Languages -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Idiomas" data-en="Languages">Idiomas</h2>
 
       <div class="languages-grid">
@@ -282,7 +287,7 @@
     <div class="divider"></div>
 
     <!-- Certifications -->
-    <section class="section">
+    <section class="section reveal">
       <h2 class="section-title" data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
 
       <div class="certs-grid">
@@ -412,6 +417,34 @@
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .divider').forEach(el => observer.observe(el));
+
+    // Apple-style spotlight + subtle tilt on cards
+    document.querySelectorAll('.cert-card, .project-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = ((e.clientX - rect.left) / rect.width) * 100;
+        const py = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mx', px + '%');
+        card.style.setProperty('--my', py + '%');
+        card.style.setProperty('--ry', (((e.clientX - rect.left) / rect.width) - 0.5) * 6 + 'deg');
+        card.style.setProperty('--rx', (((e.clientY - rect.top) / rect.height) - 0.5) * -6 + 'deg');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
   </script>
 
 </body>
