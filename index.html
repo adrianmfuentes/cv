@@ -18,41 +18,124 @@
   <div class="aurora aurora-1" aria-hidden="true"></div>
   <div class="aurora aurora-2" aria-hidden="true"></div>
   <div class="aurora aurora-3" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-  <!-- Language toggle -->
-  <div class="lang-toggle">
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Sticky mini header, appears after scrolling past the hero -->
+  <div class="mini-header glass" id="miniHeader">
+    <span class="mini-header-name">Adrián Martínez</span>
+    <nav class="mh-nav" aria-label="Section navigation">
+      <a href="#about" title="Sobre mí"></a>
+      <a href="#experience" title="Experiencia"></a>
+      <a href="#education" title="Formación"></a>
+      <a href="#honors" title="Honores"></a>
+      <a href="#projects" title="Proyectos"></a>
+      <a href="#languages" title="Idiomas"></a>
+      <a href="#certifications" title="Certificaciones"></a>
+    </nav>
+  </div>
+
+  <!-- Language / theme toggle -->
+  <div class="lang-toggle glass" id="langToggle">
+    <div class="lang-slider" id="langSlider"></div>
     <button id="btn-es" class="lang-btn active" onclick="setLang('es')">ES</button>
     <span class="lang-sep">/</span>
     <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+    <span class="toggle-divider"></span>
+    <button id="themeToggle" class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">🌙</button>
   </div>
 
+  <!-- Floating PDF export -->
+  <a class="pdf-fab glass" href="#" onclick="window.print(); return false;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    <span data-es="PDF" data-en="PDF">PDF</span>
+  </a>
+
   <main class="container">
+    <div class="layout">
 
-    <!-- Header -->
-    <header class="header reveal">
-      <div class="header-text">
-        <h1 class="name">Adrián Martínez Fuentes</h1>
-        <p class="title" data-es="Ingeniero de Software" data-en="Software Engineer">Ingeniero de Software</p>
-        <div class="contact-links">
-          <a href="tel:+34644433854">+34 644 433 854</a>
-          <span class="dot">·</span>
-          <a href="mailto:contact@adrianmf.dev">contact@adrianmf.dev</a>
-          <span class="dot">·</span>
-          <a href="https://adrianmf.dev" target="_blank">adrianmf.dev</a>
-          <span class="dot">·</span>
-          <a href="https://www.linkedin.com/in/adrianmfuentes" target="_blank">LinkedIn</a>
-          <span class="dot">·</span>
-          <a href="https://github.com/adrianmfuentes" target="_blank">GitHub</a>
-          <span class="dot">·</span>
-          <span data-es="Oviedo, Asturias" data-en="Oviedo, Asturias, Spain">Oviedo, Asturias</span>
+      <!-- Sidebar: identity + skills, sticky on desktop -->
+      <aside class="sidebar section glass reveal">
+        <header class="header reveal">
+          <div class="header-text">
+            <h1 class="name">Adrián Martínez Fuentes</h1>
+            <p class="title" data-es="Ingeniero de Software" data-en="Software Engineer">Ingeniero de Software</p>
+            <div class="contact-links">
+              <a href="tel:+34644433854">+34 644 433 854</a>
+              <span class="dot">·</span>
+              <a href="mailto:contact@adrianmf.dev">contact@adrianmf.dev</a>
+              <span class="dot">·</span>
+              <a href="https://adrianmf.dev" target="_blank">adrianmf.dev</a>
+              <span class="dot">·</span>
+              <a href="https://www.linkedin.com/in/adrianmfuentes" target="_blank">LinkedIn</a>
+              <span class="dot">·</span>
+              <a href="https://github.com/adrianmfuentes" target="_blank">GitHub</a>
+              <span class="dot">·</span>
+              <span data-es="Oviedo, Asturias" data-en="Oviedo, Asturias, Spain">Oviedo, Asturias</span>
+            </div>
+          </div>
+        </header>
+
+        <nav class="sidebar-nav" aria-label="Section navigation">
+          <a href="#about" data-es="Sobre Mí" data-en="About Me">Sobre Mí</a>
+          <a href="#experience" data-es="Experiencia" data-en="Experience">Experiencia</a>
+          <a href="#education" data-es="Formación" data-en="Education">Formación</a>
+          <a href="#honors" data-es="Honores y Premios" data-en="Honors &amp; Awards">Honores y Premios</a>
+          <a href="#projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+          <a href="#languages" data-es="Idiomas" data-en="Languages">Idiomas</a>
+          <a href="#certifications" data-es="Certificaciones" data-en="Certifications">Certificaciones</a>
+        </nav>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title" data-es="Habilidades" data-en="Skills">Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <span class="skill-label" data-es="Lenguajes" data-en="Languages">Lenguajes</span>
+            <div class="tags">
+              <span class="tag" data-level="5">Python</span>
+              <span class="tag" data-level="4">Java</span>
+              <span class="tag" data-level="4">JavaScript</span>
+              <span class="tag" data-level="3">Bash</span>
+              <span class="tag" data-level="4">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <span class="skill-label" data-es="Herramientas" data-en="Tools">Herramientas</span>
+            <div class="tags">
+              <span class="tag" data-level="4">Docker</span>
+              <span class="tag" data-level="5">Git</span>
+              <span class="tag" data-level="4">Linux</span>
+              <span class="tag" data-level="3">MongoDB</span>
+              <span class="tag" data-level="3">AWS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <span class="skill-label" data-es="Habilidades Blandas" data-en="Soft Skills">Habilidades Blandas</span>
+            <div class="tags">
+              <span class="tag" data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</span>
+              <span class="tag" data-es="Liderazgo" data-en="Leadership">Liderazgo</span>
+              <span class="tag" data-es="Adaptabilidad" data-en="Adaptability">Adaptabilidad</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <span class="skill-label" data-es="Otros" data-en="Other">Otros</span>
+            <div class="tags">
+              <span class="tag" data-es="Carnet de Conducir" data-en="Driving Licence">Carnet de Conducir</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </aside>
 
-    <div class="divider"></div>
+      <div class="main-content">
 
     <!-- About -->
-    <section class="section reveal">
+    <section class="section reveal" id="about">
       <h2 class="section-title" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
       <p class="about-text"
         data-es="Ingeniero de Software especializado en soluciones seguras, graduado con un Trabajo de Fin de Grado calificado con 10/10. Proactivo y orientado a la resolución de problemas, con experiencia técnica en entornos Python y Docker, enfocado en aportar eficiencia y calidad técnica en equipos de desarrollo innovadores."
@@ -63,58 +146,13 @@
 
     <div class="divider"></div>
 
-    <!-- Skills -->
-    <section class="section reveal">
-      <h2 class="section-title" data-es="Habilidades" data-en="Skills">Habilidades</h2>
-
-      <div class="skills-grid">
-        <div class="skill-group">
-          <span class="skill-label" data-es="Lenguajes" data-en="Languages">Lenguajes</span>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Bash</span>
-            <span class="tag">SQL</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <span class="skill-label" data-es="Herramientas" data-en="Tools">Herramientas</span>
-          <div class="tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Git</span>
-            <span class="tag">Linux</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">AWS</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <span class="skill-label" data-es="Habilidades Blandas" data-en="Soft Skills">Habilidades Blandas</span>
-          <div class="tags">
-            <span class="tag" data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</span>
-            <span class="tag" data-es="Liderazgo" data-en="Leadership">Liderazgo</span>
-            <span class="tag" data-es="Adaptabilidad" data-en="Adaptability">Adaptabilidad</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <span class="skill-label" data-es="Otros" data-en="Other">Otros</span>
-          <div class="tags">
-            <span class="tag" data-es="Carnet de Conducir" data-en="Driving Licence">Carnet de Conducir</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
     <!-- Experience -->
-    <section class="section reveal">
+    <section class="section reveal" id="experience">
       <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experiencia</h2>
 
-      <div class="entry">
+      <div class="timeline">
+        <div class="timeline-item">
+        <div class="entry">
         <div class="entry-header">
           <div>
             <h3 class="entry-title" data-es="Becario de Ingeniería del Software" data-en="Software Engineering Intern">Becario de Ingeniería del Software</h3>
@@ -128,16 +166,20 @@
           <li data-es="Facilitar la comunicación interdepartamental entre el equipo técnico y los stakeholders" data-en="Facilitating interdepartmental communication between the technical team and stakeholders">Facilitar la comunicación interdepartamental entre el equipo técnico y los stakeholders</li>
           <li data-es="Documentar procesos técnicos e informes de progreso. Optimizar el flujo de trabajo aplicando métricas de rendimiento" data-en="Documenting technical processes and progress reports. Optimizing workflow by applying performance metrics">Documentar procesos técnicos e informes de progreso. Optimizar el flujo de trabajo aplicando métricas de rendimiento</li>
         </ul>
+        </div>
+        </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
     <!-- Education -->
-    <section class="section reveal">
+    <section class="section reveal" id="education">
       <h2 class="section-title" data-es="Formación" data-en="Education">Formación</h2>
 
-      <div class="entry">
+      <div class="timeline">
+        <div class="timeline-item">
+        <div class="entry">
         <div class="entry-header">
           <div>
             <h3 class="entry-title" data-es="Grado en Ingeniería del Software (impartido en inglés)" data-en="Bachelor's in Software Engineering (taught in English)">Grado en Ingeniería del Software (impartido en inglés)</h3>
@@ -155,9 +197,11 @@
           <span class="verify-icon">✓</span>
           <span data-es="Verificar autenticidad del título en la Sede Electrónica de la Universidad de Oviedo" data-en="Verify degree authenticity at the University of Oviedo Electronic Office">Verificar autenticidad del título en la Sede Electrónica de la Universidad de Oviedo</span>
         </a>
-      </div>
+        </div>
+        </div>
 
-      <div class="entry">
+        <div class="timeline-item">
+        <div class="entry">
         <div class="entry-header">
           <div>
             <h3 class="entry-title" data-es="Máster Universitario en Ingeniería Web" data-en="Master's Degree in Web Engineering">Máster Universitario en Ingeniería Web</h3>
@@ -169,16 +213,20 @@
         <ul class="entry-list">
           <li data-es="Matriculado para el curso académico 2026/2027" data-en="Enrolled for the 2026/2027 academic year">Matriculado para el curso académico 2026/2027</li>
         </ul>
+        </div>
+        </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
     <!-- Honors -->
-    <section class="section reveal">
+    <section class="section reveal" id="honors">
       <h2 class="section-title" data-es="Honores y Premios" data-en="Honors &amp; Awards">Honores y Premios</h2>
 
-      <div class="entry">
+      <div class="timeline">
+        <div class="timeline-item">
+        <div class="entry">
         <div class="entry-header">
           <div>
             <h3 class="entry-title" data-es="Matrícula de Honor en Arquitectura del Software" data-en="Honours Distinction in Software Architecture">Matrícula de Honor en Arquitectura del Software</h3>
@@ -190,9 +238,11 @@
           <li data-es="Máxima distinción de matrícula de honor en la asignatura de Arquitectura del Software" data-en="Highest honours distinction in the Software Architecture course">Máxima distinción de matrícula de honor en la asignatura de Arquitectura del Software</li>
           <li data-es="Premio al mejor proyecto del curso entre todos los equipos por la destacada aplicación de principios de arquitectura del software" data-en="Awarded best project of the course among all teams for the outstanding application of software architecture principles">Premio al mejor proyecto del curso entre todos los equipos por la destacada aplicación de principios de arquitectura del software</li>
         </ul>
-      </div>
+        </div>
+        </div>
 
-      <div class="entry">
+        <div class="timeline-item">
+        <div class="entry">
         <div class="entry-header">
           <div>
             <h3 class="entry-title" data-es="Matrícula de Honor en ASLEPI" data-en="Honours Distinction in ASLEPI">Matrícula de Honor en ASLEPI</h3>
@@ -203,13 +253,15 @@
         <ul class="entry-list">
           <li data-es="Matrícula de Honor en ASLEPI (Aspectos Sociales, Legales, Éticos y Profesionales de la Informática)" data-en="Honours distinction in ASLEPI (Social, Legal, Ethical and Professional Aspects of Computing)">Matrícula de Honor en ASLEPI (Aspectos Sociales, Legales, Éticos y Profesionales de la Informática)</li>
         </ul>
+        </div>
+        </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
     <!-- Projects -->
-    <section class="section reveal">
+    <section class="section reveal" id="projects">
       <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
 
       <div class="projects-grid">
@@ -265,7 +317,7 @@
     <div class="divider"></div>
 
     <!-- Languages -->
-    <section class="section reveal">
+    <section class="section reveal" id="languages">
       <h2 class="section-title" data-es="Idiomas" data-en="Languages">Idiomas</h2>
 
       <div class="languages-grid">
@@ -287,7 +339,7 @@
     <div class="divider"></div>
 
     <!-- Certifications -->
-    <section class="section reveal">
+    <section class="section reveal" id="certifications">
       <h2 class="section-title" data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
 
       <div class="certs-grid">
@@ -406,9 +458,22 @@
       </div>
     </section>
 
+      </div>
+    </div>
   </main>
 
   <script>
+    function positionLangSlider() {
+      const active = document.querySelector('.lang-btn.active');
+      const toggle = document.getElementById('langToggle');
+      const slider = document.getElementById('langSlider');
+      if (!active || !toggle || !slider) return;
+      const tRect = toggle.getBoundingClientRect();
+      const bRect = active.getBoundingClientRect();
+      slider.style.width = bRect.width + 6 + 'px';
+      slider.style.transform = 'translateX(' + (bRect.left - tRect.left - 7) + 'px)';
+    }
+
     function setLang(lang) {
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-' + lang + ']').forEach(el => {
@@ -416,6 +481,82 @@
       });
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      positionLangSlider();
+    }
+
+    // ─── Theme toggle ─────────────────────────────────────────
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      try { localStorage.setItem('theme', theme); } catch (e) {}
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    (function initTheme() {
+      let saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      applyTheme(saved === 'dark' ? 'dark' : 'light');
+    })();
+
+    // ─── Skill level dots ─────────────────────────────────────
+    document.querySelectorAll('.tag[data-level]').forEach(tag => {
+      const level = parseInt(tag.getAttribute('data-level'), 10) || 0;
+      const dots = document.createElement('span');
+      dots.className = 'tag-dots';
+      for (let i = 1; i <= 5; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'tag-dot' + (i <= level ? ' filled' : '');
+        dots.appendChild(dot);
+      }
+      tag.appendChild(dots);
+    });
+
+    // ─── Scroll progress + sticky mini header ──────────────────
+    const scrollProgress = document.getElementById('scrollProgress');
+    const miniHeader = document.getElementById('miniHeader');
+    const heroEl = document.querySelector('.sidebar .header');
+
+    function onScroll() {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const max = doc.scrollHeight - doc.clientHeight;
+      if (scrollProgress) scrollProgress.style.width = (max > 0 ? (scrollTop / max) * 100 : 0) + '%';
+
+      if (heroEl && miniHeader) {
+        const heroBottom = heroEl.getBoundingClientRect().bottom;
+        miniHeader.classList.toggle('visible', heroBottom < 0);
+      }
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ─── Active section highlighting (sidebar nav + mini header dots) ──
+    const navLinks = document.querySelectorAll('.sidebar-nav a, .mh-nav a');
+    const navSections = Array.from(document.querySelectorAll('main section[id]'));
+
+    let currentSectionId = null;
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) currentSectionId = entry.target.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentSectionId);
+      });
+    }, { threshold: 0, rootMargin: '-45% 0px -50% 0px' });
+
+    navSections.forEach(section => navObserver.observe(section));
+
+    // ─── Global cursor spotlight ────────────────────────────────
+    const cursorGlow = document.getElementById('cursorGlow');
+    if (cursorGlow && matchMedia('(hover: hover)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.transform = 'translate(' + (e.clientX - 240) + 'px, ' + (e.clientY - 240) + 'px)';
+      }, { passive: true });
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -445,6 +586,10 @@
         card.style.setProperty('--ry', '0deg');
       });
     });
+
+    window.addEventListener('load', positionLangSlider);
+    window.addEventListener('resize', positionLangSlider);
+    positionLangSlider();
   </script>
 
 </body>
