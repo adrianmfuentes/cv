@@ -151,6 +151,24 @@ body {
 
 @media (max-width: 43.75rem) {
   .mh-nav { display: none; }
+
+  .mini-header {
+    left: 0.75rem;
+    right: auto;
+    top: 0.75rem;
+    transform: translate(0, -150%);
+    padding: 0.5rem 0.9rem;
+    max-width: calc(100vw - 8.5rem);
+  }
+
+  .mini-header.visible { transform: translate(0, 0); }
+
+  .mini-header-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
 }
 
 /* ─── Floating PDF button ──────────────────────────────────── */
